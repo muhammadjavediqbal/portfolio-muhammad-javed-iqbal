@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --classic-black: #000000;
+  --golden-pitch: #3c3c28;
+  --power-orange: #ff4500;
+  --off-white: #f5f5e6;
+  --gradient-start: #ff4500;
+  --gradient-end: #ff8c00;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--classic-black);
+  color: var(--off-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins);
+}
+
+.section-title {
+  @apply text-3xl font-bold mb-4 pb-2 inline-block;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end)) 1;
+}
+
+.skill-tag {
+  @apply bg-golden-pitch text-off-white px-3 py-1 rounded-full text-sm font-medium m-1;
+}
+
+.nav-link {
+  @apply relative px-3 py-2 text-off-white hover:text-transparent hover:bg-clip-text transition-colors duration-300;
+  background-clip: text;
+}
+
+.nav-link:hover {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-0.5 transition-all duration-300;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.active-nav-link {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active-nav-link::after {
+  @apply w-full;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.project-card {
+  @apply bg-golden-pitch/30 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-golden-pitch/50;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-input {
+  @apply w-full p-3 border border-golden-pitch bg-black/50 text-off-white rounded-md focus:outline-none focus:ring-2 focus:border-transparent;
+  --tw-ring-color: var(--gradient-start);
+}
+
+.btn-primary {
+  @apply text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:opacity-90;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.btn-secondary {
+  @apply text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:opacity-90;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.btn-outline {
+  @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+}
+
+.btn-outline:hover {
+  opacity: 0.9;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.gradient-border {
+  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end)) 1;
+}
+
+.profile-image {
+  @apply rounded-full overflow-hidden;
+  position: relative;
+}
+
+.profile-image::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  border-radius: 50%;
+  z-index: -1;
+}
